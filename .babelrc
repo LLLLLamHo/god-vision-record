@@ -1,0 +1,46 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "modules": false,
+        "targets": [ // 浏览器
+          "Chrome >= 45",
+          "last 2 Firefox versions",
+          "ie >= 11",
+          "Edge >= 12",
+          "iOS >= 9",
+          "Android >= 4",
+          "last 2 ChromeAndroid versions"
+        ]
+      }
+    ],
+    [
+      "@babel/preset-typescript"
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators", // 兼容装饰器
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties", // 针对class中的static做处理
+      {
+        "loose": true
+      } // 不使用defineProperty来对static赋值，而是使用默认赋值方式
+    ],
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 3, // 更高的api支持，需要额外引用corejs-3
+        "helpers": true, // 使用moduleName来进行引用
+        "regenerator": true, // 转换的api不会污染全局
+        "useESModules": true, // 去除commonjs的标识 https://babeljs.io/docs/en/babel-plugin-transform-runtime#useesmodules
+        "absoluteRuntime": true // 使用绝对路径进行模块引用, 用户使用时必须要安装运行时
+      }
+    ]
+  ]
+}

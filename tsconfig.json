@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "declaration" : true,
+        "moduleResolution": "Classic",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "rootDir": "src",
+        "target": "es5",
+        "outDir": "./dist",
+        "lib": ["es5", "es6", "dom"],
+        "allowSyntheticDefaultImports": true
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}
