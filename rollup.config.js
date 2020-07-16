@@ -19,7 +19,7 @@ module.exports = {
             exclude: 'node_modules/**', // 只编译我们的源代码
             extensions: ['js', 'ts']
         } ),
-        // typescript(),
+        typescript(),
         commonjs()
     ]
 };

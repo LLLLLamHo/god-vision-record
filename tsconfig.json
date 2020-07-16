@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+        "allowJs": true,
+        "importHelpers": true,
         "declaration" : true,
         "moduleResolution": "Classic",
         "noImplicitAny": true,
@@ -9,7 +11,7 @@
         "rootDir": "src",
         "target": "es5",
         "outDir": "./dist",
-        "lib": ["es5", "es6", "dom"],
+        "lib": ["es6", "es5", "dom"],
         "allowSyntheticDefaultImports": true
     },
     "include": [
