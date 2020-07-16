@@ -1,6 +1,7 @@
 import * as rrweb from 'rrweb';
 import { GodVProps, RecordEvent } from '../types';
 import { uuid } from '../utils/uuid';
+import axios from 'axios';
 
 export default class GodV {
 
@@ -9,8 +10,10 @@ export default class GodV {
         this.maxLength = props.maxLength || this.maxLength;
         this.interval = props.interval || this.interval;
         this.uuid = uuid();
+        this.userTag = props.userTag || '';
     }
 
+    private userTag: string = '';
     private uuid: string = null;
     private fetchUrl: string
     private maxLength: number = 10;
@@ -73,8 +76,20 @@ export default class GodV {
     }
 
     private uploadEvent(uploadEvents: Array<RecordEvent>): void {
-        console.log(this.uuid)
-        console.log(uploadEvents);
+        const uploadData = {
+            uuid: this.uuid,
+            events: uploadEvents,
+            userTag: this.userTag
+        }
+
+        axios.post(this.fetchUrl, uploadData)
+          .then(function (response: any) {
+            console.log(response);
+          })
+          .catch(function (error: any) {
+            console.log(error);
+          });
+
     }
 
 }

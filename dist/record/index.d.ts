@@ -1,6 +1,7 @@
 import { GodVProps } from '../types';
 export default class GodV {
     constructor(props: GodVProps);
+    private userTag;
     private uuid;
     private fetchUrl;
     private maxLength;
