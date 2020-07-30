@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/rollup --config rollup.config.js",
-    "watch": "./node_modules/.bin/rollup -w --config rollup.config.js",
+    "build": "BUILD_ENV=develop ./node_modules/.bin/rollup --config rollup.config.js",
+    "watch": "BUILD_ENV=develop ./node_modules/.bin/rollup -w --config rollup.config.js",
+    "publish": "BUILD_ENV=production ./node_modules/.bin/rollup --config rollup.config.js",
     "staticServer": "cd ./devServer && node index.js"
   },
   "repository": {
@@ -35,6 +36,7 @@
     "koa": "^2.13.0",
     "rollup": "^2.21.0",
     "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-uglify": "^6.0.4",
     "tslib": "^2.0.0",
     "typescript": "^3.9.6"
   },

@@ -6,7 +6,7 @@ const path = require('path');
 const router = new Router();
 
 router.get( '/record', ( ctx, next ) => {
-    ctx.response.body = fs.createReadStream(path.resolve(__dirname, '../dist/index.js'), 'utf8');;
+    ctx.response.body = fs.createReadStream(path.resolve(__dirname, '../lib/index.js'), 'utf8');;
     ctx.response.type = 'javascript';
 } );
 

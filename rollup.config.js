@@ -4,8 +4,11 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import json from '@rollup/plugin-json';
 import globals from 'rollup-plugin-node-globals';
+import { uglify } from "rollup-plugin-uglify";
 
-module.exports = {
+const {BUILD_ENV} = process.env;
+
+const config = {
     input: 'src/record/index.ts',
     output: {
         dir: './dist',
@@ -30,3 +33,10 @@ module.exports = {
     ],
 
 };
+
+if (BUILD_ENV == 'production') {
+    config.plugins.unshift(uglify());
+}
+
+
+module.exports = config;
