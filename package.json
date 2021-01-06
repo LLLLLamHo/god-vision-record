@@ -41,7 +41,7 @@
     "typescript": "^3.9.6"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "koa-router": "^9.1.0",
     "rrweb": "^0.8.2"
